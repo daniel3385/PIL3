@@ -1,9 +1,9 @@
 --anX^n+a(n-1)X^(n-1)+..a1X+a0
 
 function solve_polynomial(t,x)
-	local result = 0	
-	for i = 1, #t do
-		result = result + t[i]*(x^i)
+	local result = t[1]	
+	for i = 2, #t do
+		result = result + t[i]*(x^(i-1))
 	end
 	return result
 end
