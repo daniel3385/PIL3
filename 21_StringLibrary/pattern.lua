@@ -1,10 +1,10 @@
 -- '%D' is the same as '[^%d]',  but is '[^%d%u]' the same as '[%D%U]' ?
---[[
-    No, string.gsub(s, "[%D%U]", ".") will substitute 
-    all non-digits and all lower-cases letters for "."
+--[[    
+    No, [^%d%u] is the complement of the set [%d%u]
+    not digit and not upper-case letter.
 
-    However, string.gsub(s, "[^%d%u]", ".") will substitute
-    all non-digits and not upper-cases for "."
+    While [%D%U] is the set not digit or not upper-case letter
+    ex:
 
     > return string.gsub("d4NiEl0", "[^%d%u]", ".")
     .4N.E.0 3
