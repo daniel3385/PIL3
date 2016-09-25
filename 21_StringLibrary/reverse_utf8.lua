@@ -1,20 +1,23 @@
 -- reverse a string with UTF-8
 
---
+list = require("list")
 
-
-local a="Nähdään¢¥¶µÆ"
-local b="daniel"
 function reverse_utf8(s)
-    for c in string.gmatch(a,".[\128-\191]") do
-        -- insert in a stack
-        print(c)
+    local stack = list.new()
+    local c
+    for c in string.gmatch(s,".[\128-\191]*") do
+        list.pushfirst(stack, c)
     end
-    --remove stack, concat
+    s = list.popfirst(stack) 
+    c = list.popfirst(stack)
+    while c do
+        s = s..c
+        c = list.popfirst(stack)
+    end
     return s
 end
 
-a = string.reverse(a)
+local a="Nähdään¢¥¶µÆ"
 print(a)
-b = string.reverse(b)
-print(b)
+a = reverse_utf8(a)
+print(a)
