@@ -1,0 +1,2 @@
+-- type(nil) == nil ?
+-- The result is false, nil is always a unique value
