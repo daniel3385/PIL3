@@ -1,0 +1,3 @@
+[submodule "externals/luaSimpleTest"]
+	path = externals/luaSimpleTest
+	url = https://github.com/danielcabralsilveira/luaSimpleTest
