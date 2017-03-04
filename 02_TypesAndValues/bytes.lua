@@ -1,5 +1,5 @@
 -- How create a big string of bytes?
--- Using /z, example:
+-- Using \z makes Lua ignore the new line and the indentation, example:
 -- local s = "\a\a\a\a\a\a\a\a\a\a\a\a\z
 --              \a\a\a\a\a\a\a\a\a\a\z
 --              \a\a\a"
