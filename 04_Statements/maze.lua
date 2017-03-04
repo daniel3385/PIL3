@@ -43,21 +43,35 @@ fsm = FSM{
   {"ST_room3", "EV_east", "ST_room4", action6},
 }
 
-events = {"EV_south", "EV_east", "EV_west", "EV_north"}
-state = "ST_room1"
-print("Enter: 1-south, 2-east, 3-west or 4-north.")
-repeat 
-	line = io.read()  
-	local a = fsm[state][events[tonumber(line)]]
-	if type(a) == "table" then
-		a.action()
-		state = a.new
-	end
-	if state == "ST_room4" then
-		break
-	end
+
+--[[
+   Ex: tableOfMovements = {1, 4}, go from room1 to room 3, then from room3
+   to room 4 and win!
+--]]
+
+local events = {"EV_south", "EV_east", "EV_west", "EV_north"}
+function moveInMaze(tableOfMovements)
+    local state = "ST_room1"
+    local result = false
+    print("Begin game:")
+    for _,move in ipairs(tableOfMovements) do
+        local a = fsm[state][events[tonumber(move)]]
+        if type(a) == "table" then
+            a.action()
+            state = a.new
+        end
+        if state == "ST_room4" then
+            print("End game: you win!\n")
+            result = true
+            break
+        end
+    end
+    if state ~= "ST_room4" then
+        print("End game: you lose!\n")
+    end
+    return result 
+end
 		
-until line == ""
 
 
 
