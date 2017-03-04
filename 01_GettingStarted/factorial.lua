@@ -1,8 +1,10 @@
 -- factorial
 
-function fact (n)
-	if n < 0 then
-		print("can not calculate factorial of a negative number!")
+-- return factorial of 'n', return 'nil' otherwise
+
+function fact(n)
+    if type(n) ~= "number" or n < 0 or n%1 ~= 0 then
+		-- It's not a number, or positive or integer, wrong input!
 		return nil
 	end
 	if n == 0 then
@@ -12,7 +14,3 @@ function fact (n)
 	end
 end
 
-print("Print factorial number")
-print("enter a number:")
-a = io.read("*number")
-print(fact(a))
