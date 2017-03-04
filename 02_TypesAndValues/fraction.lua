@@ -1,2 +1,0 @@
---TODO represente 12.7 with denomator is a power of 2?
---TODO same with the namer 5.5
