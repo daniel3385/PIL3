@@ -1,27 +1,27 @@
 -- labyrinth game
 
 function action1()
- print("ROOM 1 ------->  ROOM 3")
+ --print("ROOM 1 ------->  ROOM 3")
 end
 
 function action2()
- print("ROOM 1 ------->  ROOM 2")
+ --print("ROOM 1 ------->  ROOM 2")
 end
 
 function action3()
- print("ROOM 2 ------->  ROOM 3")
+ --print("ROOM 2 ------->  ROOM 3")
 end
 
 function action4()
- print("ROOM 2 ------->  ROOM 1")
+ --print("ROOM 2 ------->  ROOM 1")
 end
 
 function action5()
- print("ROOM 3 ------->  ROOM 1")
+ --print("ROOM 3 ------->  ROOM 1")
 end
 
 function action6()
- print("ROOM 3 ------->  ROOM 4")
+ --print("ROOM 3 ------->  ROOM 4")
 end
 
 function FSM(t)
