@@ -8,4 +8,3 @@ function concatenated(...)
     return output
 end
 
-print(concatenated("daniel","cabral","silveira","bla","bla2"))
