@@ -1,6 +1,6 @@
 -- input strings then output them concatenated
 
-function concatenated(...)
+function concat(...)
     local output = ""
     for k, v in pairs{...} do
         output = output .. v
