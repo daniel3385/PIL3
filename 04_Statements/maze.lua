@@ -53,7 +53,7 @@ local events = {"EV_south", "EV_east", "EV_west", "EV_north"}
 function moveInMaze(tableOfMovements)
     local state = "ST_room1"
     local result = false
-    print("Begin game:")
+    --print("Begin game:")
     for _,move in ipairs(tableOfMovements) do
         local a = fsm[state][events[tonumber(move)]]
         if type(a) == "table" then
@@ -61,13 +61,13 @@ function moveInMaze(tableOfMovements)
             state = a.new
         end
         if state == "ST_room4" then
-            print("End game: you win!\n")
+            --print("End game: you win!\n")
             result = true
             break
         end
     end
     if state ~= "ST_room4" then
-        print("End game: you lose!\n")
+        --print("End game: you lose!\n")
     end
     return result 
 end
