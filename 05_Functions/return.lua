@@ -15,7 +15,3 @@ function return_but_first(...)
     return vector
 end
 
-local t = return_but_first(1,2,3,4,5,6)
-for _, v in ipairs(t) do
-    print(v)
-end
